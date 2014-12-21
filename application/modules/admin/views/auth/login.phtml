@@ -1,0 +1,15 @@
+<link href="/css/admin-sigin.css" rel="stylesheet">
+
+<form class="form-signin" method="post" role="form">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <?php echo $form->render('email'); ?>
+    <?php echo $form->render('password'); ?>
+    <div class="checkbox">
+        <label>
+            <?php echo $form->render('remember'); ?>
+            Remember me
+        </label>
+    </div>
+    <?php echo $form->render('Sing in'); ?>
+    <?php echo $form->render('csrf'); ?>
+</form>

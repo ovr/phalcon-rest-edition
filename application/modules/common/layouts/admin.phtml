@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dmitry Patsura">
+
+    <title>Phalcon module skeleton</title>
+
+    <link href="/dist/all.css" rel="stylesheet">
+    <link href="/css/admin.css" rel="stylesheet">
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/src/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <script src="/src/vendor/underscore/underscore.js"></script>
+    <script src="/src/vendor/backbone/backbone.js"></script>
+    <script src="/src/vendor/backgrid/lib/backgrid.js"></script>
+
+    <script src="/dist/ns.js"></script>
+</head>
+<body>
+    <?php
+        /**
+         * \User\Model\User
+         */
+        $identity = $this->di->get('auth')->getIdentity();
+    ?>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<?php echo $this->tag->url('admin'); ?>">Project name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="<?php echo $this->tag->url('admin'); ?>">Dashboard</a></li>
+                    <li><a href="<?php echo $this->tag->u('admin', 'settings'); ?>">Settings</a></li>
+                    <li><a href="<?php echo $this->tag->u('admin', 'index', 'index'); ?>">Profile</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> 
+                            <strong><?php echo $identity->getGroup()->title; ?></strong>
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="navbar-login">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <p class="text-center">
+                                                <span class="glyphicon glyphicon-user icon-size"></span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="text-left"><strong><?php echo $identity->getUsername(); ?></strong></p>
+                                            <p class="text-left small"><?php echo $identity->email; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="navbar-login navbar-login-session">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>
+                                                <a href="<?php echo $this->tag->u('admin', 'auth', 'logout'); ?>" class="btn btn-danger btn-block">Logout</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="<?php echo $this->tag->u('admin'); ?>" data-backbone>Overview</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Export</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="<?php echo $this->tag->u('admin', 'users'); ?>" data-backbone>Users</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="<?php echo $this->tag->u('admin', 'products'); ?>" data-backbone>Products</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h1 class="page-header"></h1>
+                <div id="container">
+
+                </div>
+                <?php echo $this->getContent(); ?>
+            </div>
+        </div>
+    </div>
+
+    <?php echo $this->partial('footer'); ?>
+
+    <script src="/dist/Model/User.js"></script>
+    <script src="/dist/Collection/Users.js"></script>
+
+    <script src="/dist/Events.js"></script>
+    <script src="/dist/App.js"></script>
+    <script src="/dist/Router.js"></script>
+    <script src="/dist/Init.js"></script>
+</body>
+</html>

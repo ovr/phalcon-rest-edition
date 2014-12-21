@@ -1,0 +1,10 @@
+composer.lock
+.idea/
+vendor/
+node_modules/
+public/vendor/
+application/config/development.php
+application/config/production.php
+application/config/testing.php
+application/config/staging.php
+application/config/parameters.php

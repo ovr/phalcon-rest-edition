@@ -167,18 +167,6 @@ return array(
     ),
     'application' => array(
         'modules' => array(
-            'frontend' => array(
-                'className' => 'Frontend\Module',
-                'path' => APPLICATION_PATH . '/modules/frontend/Module.php',
-            ),
-            'catalog' => array(
-                'className' => 'Catalog\Module',
-                'path' => APPLICATION_PATH . '/modules/catalog/Module.php',
-            ),
-            'admin' => array(
-                'className' => 'Admin\Module',
-                'path' => APPLICATION_PATH . '/modules/admin/Module.php',
-            ),
             'api' => array(
                 'className' => 'Api\Module',
                 'path' => APPLICATION_PATH . '/modules/api/Module.php',
@@ -186,11 +174,7 @@ return array(
             'user' => array(
                 'className' => 'User\Module',
                 'path' => APPLICATION_PATH . '/modules/user/Module.php',
-            ),
-            'oauth' => array(
-                'className' => 'OAuth\Module',
-                'path' => APPLICATION_PATH . '/modules/oauth/Module.php',
-            ),
+            )
         )
     )
 );

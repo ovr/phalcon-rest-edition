@@ -7,7 +7,7 @@ Phalcon Rest Edition
 
 ## [Getting started](./docs/getting-started.md) [[ru](./docs/getting-started-ru.md)] :: [Vagrant](https://github.com/ovr/perfect-php-vagrant)
 
-This is a skeleton application written on [phalcon framework](https://github.com/phalcon/cphalcon) with performance boost.
+This is a skeleton application written on [phalcon framework](https://github.com/phalcon/cphalcon) with performance boost for build REST API service.
 This project created to develop applications in an easy way.
  
 For current time project is under development, have fun :)
